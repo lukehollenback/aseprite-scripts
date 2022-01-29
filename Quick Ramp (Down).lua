@@ -1,5 +1,5 @@
 ----------------------------------------------------------------------------------------------------
--- Adjusts the hue, saturation, and lightness of the current foreground color up slightly to help
+-- Adjusts the hue, saturation, and lightness of the current foreground color down slightly to help
 -- create a quick color palette ramp.
 ----------------------------------------------------------------------------------------------------
 
