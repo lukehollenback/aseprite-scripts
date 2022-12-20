@@ -25,21 +25,18 @@ if not dlg.data.ok then
     return end
 
 --
--- Export each tagged frame as its own PNG file according to the exportPath defined in its user data
--- and its name.
+-- Export each tagged frame as its own PNG file according to its name. Tag names can specify
+-- sub-directories to the export directory using slashes (e.g. "subdirectory/name") if desired.
 --
 -- NOTE: Currently, we only support exporting single-frame tags and PNG files. In the future, we
 --  might add support for exporting multi-frame tags (either as sprite strips or as GIF files).
 --
 for i, tag in ipairs(spr.tags) do
-    local _, exportPathKeyEnd = string.find(tag.data, "exportPath=\"")
-    local exportPathValueEnd, _ = string.find(tag.data, "\"", (exportPathKeyEnd + 1))
-    local exportPath = string.sub(tag.data, (exportPathKeyEnd + 1), (exportPathValueEnd - 1))
     local img = Image(spr.width, spr.height)
 
     img:drawSprite(spr, tag.fromFrame.frameNumber, 0)
     img:resize(spr.width * dlg.data.scale, spr.height * dlg.data.scale)
-    img:saveAs(dlg.data.directory .. "/" .. exportPath .. tag.name .. ".png")
+    img:saveAs(dlg.data.directory .. "/" .. tag.name .. ".png")
 end
 
 --
