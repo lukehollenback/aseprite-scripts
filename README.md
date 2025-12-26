@@ -11,3 +11,7 @@ Random scripts to help create art in Aseprite. Written using the
 
 2. Hard-link (Aseprite does not support soft links) the scripts you want using
    `ln {path to cloned script} {path to Aseprite script folder}`.
+
+Or, alternatively, do something like `cp {path to cloned repository}/*.lua {path to Aseprite script
+folder}`. This might fail (e.g., if the files already exist)  in which case you'll need to take
+additional steps or use additional flags.
